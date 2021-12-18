@@ -3,8 +3,8 @@ import { SHOP_DATA } from '../../data/shop.data';
 import CollectionPreview from '../../components/collection-preview/collection-preview.component';
 
 class Shop extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       collections: SHOP_DATA,
     };
