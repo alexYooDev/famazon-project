@@ -1,6 +1,5 @@
-import { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { SHOP_DATA } from '../../data/shop.data';
-import CollectionPreview from '../../components/collection-preview/collection-preview.component';
 
 class Shop extends Component {
   constructor(props) {
@@ -11,12 +10,17 @@ class Shop extends Component {
   }
 
   render() {
+    const CollectionPreview = React.lazy(() =>
+      import('../../components/collection-preview/collection-preview.component')
+    );
     const { collections } = this.state;
     return (
       <div className='shop-page'>
-        {collections.map(({ id, ...otherCollectionProps }) => (
-          <CollectionPreview key={id} {...otherCollectionProps} />
-        ))}
+        <Suspense fallback={<div>loading...</div>}>
+          {collections.map(({ id, ...otherCollectionProps }) => (
+            <CollectionPreview key={id} {...otherCollectionProps} />
+          ))}
+        </Suspense>
       </div>
     );
   }
