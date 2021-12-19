@@ -4,7 +4,6 @@ import './header.styles.scss';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
-/* presentational component? : Functional componenent with no state declared */
 const Header = () => (
   <div className='header'>
     <Link className='logo-container' to='/'>
