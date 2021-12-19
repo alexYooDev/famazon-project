@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import MenuItem from '../menu-item/menu-item.component';
 import { SECTIONS_DATA } from '../../data/section.data';
-import './directory.style.scss';
+import './directory.styles.scss';
 
 class Directory extends Component {
   constructor() {

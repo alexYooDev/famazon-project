@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 
-import './homepage.style.scss';
+import './homepage.styles.scss';
 
 const Directory = React.lazy(() =>
   import('../../components/directory/directory.component')

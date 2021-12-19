@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 import FormInput from '../form-input/form-input.component';
 
-import './sign-in.style.scss';
+import './sign-in.styles.scss';
 
 class SignIn extends Component {
   constructor(props) {
