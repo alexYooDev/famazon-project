@@ -1,6 +1,7 @@
 import React, { Component, Suspense } from 'react';
 import { SHOP_DATA } from '../../data/shop.data';
 
+/* when state lives in the component, declare the component as class type */
 class Shop extends Component {
   constructor(props) {
     super(props);
