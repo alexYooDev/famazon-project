@@ -11,6 +11,9 @@
 # production
 /build
 
+# possible security threat
+/firebase.utils.js
+
 # misc
 .DS_Store
 .env.local
