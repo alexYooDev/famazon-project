@@ -36,11 +36,18 @@
   &.inverted {
     background-color: white;
     color: black;
+    &:hover {
+      background-color: black;
+      color: white;
+      border: none;
+      transition: 180ms ease-in-out;
+    }
   }
+}
+.checkout {
+  color: white;
   &:hover {
-    background-color: black;
-    color: white;
-    border: none;
+    color: black;
     transition: 180ms ease-in-out;
   }
 }
