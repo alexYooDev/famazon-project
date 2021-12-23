@@ -1,15 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { useNavigate } from 'react-router-dom';
 
 import { selectCartItems } from '../../redux/cart/cart.selectors';
+import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import CustomButton from '../custom-button/custom-button.component';
 import CartItems from '../cart-item/cart-item.component';
 
 import './cart-dropdown.styles.scss';
-import { useNavigate } from 'react-router-dom';
 
-const CartDropDown = ({ cartItems }) => {
+// dispatch function is already passed to the component as props
+const CartDropDown = ({ cartItems, dispatch }) => {
   const navigate = useNavigate();
   return (
     <div className='cart-dropdown'>
@@ -22,7 +24,12 @@ const CartDropDown = ({ cartItems }) => {
           <span className='empty-message'>Your Cart is Empty</span>
         )}
       </div>
-      <CustomButton onClick={() => navigate('/checkout', { replace: true })}>
+      <CustomButton
+        onClick={() => {
+          navigate('/checkout', { replace: true });
+          dispatch(toggleCartHidden());
+        }}
+      >
         Go To CHECKOUT
       </CustomButton>
     </div>
