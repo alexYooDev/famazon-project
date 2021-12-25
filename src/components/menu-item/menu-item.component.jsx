@@ -8,7 +8,7 @@ const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
     <div
       className={`${size} menu-item`}
       onClick={() =>
-        navigate(`${linkUrl}`)
+        navigate(`/shop${linkUrl}`)
       } /* dynamically changing css value */
     >
       <div
