@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { selectCollection } from '../../redux/shop/shop.selectors';
-import collectionItem from '../../components/collection-item/collection-item.component';
+import CollectionItem from '../../components/collection-item/collection-item.component';
 
 import './collection.styles.scss';
 import { useParams } from 'react-router-dom';
@@ -10,19 +10,19 @@ import { useEffect } from 'react';
 const CollectionPage = ({ collection, changeParams }) => {
   let params = useParams();
 
-  console.log(collection);
+  const { title, items } = collection;
 
   useEffect(() => {
     changeParams(params.collectionId);
   });
-  // let params = useParams();
-
-  // const collection = useSelector(selectCollections(params.categoryId));
-
-  // console.log(collection);
   return (
-    <div className='collection'>
-      <h2>COLLECTION PAGE</h2>
+    <div className='collection-page'>
+      <h2 className='title'>{title}</h2>
+      <div className='items'>
+        {items.map((item) => (
+          <CollectionItem key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 };
