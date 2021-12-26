@@ -1,16 +1,16 @@
 import React, { Suspense } from 'react';
-
-import './homepage.styles.scss';
+import { HomePageContainer } from './homepage.styles';
 
 const Directory = React.lazy(() =>
   import('../../components/directory/directory.component')
 );
 
 const HomePage = () => (
-  <div className='homepage'>
+  <HomePageContainer>
     <Suspense fallback={<div>loading...</div>}>
       <Directory />
     </Suspense>
-  </div>
+  </HomePageContainer>
 );
+
 export default HomePage;
