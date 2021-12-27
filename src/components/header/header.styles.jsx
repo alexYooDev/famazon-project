@@ -1,7 +1,10 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-/* creates css block that could be added on to styled components */
+/* creates css block that could be added on to styled components 
+enables the developer to make changes in one place 
+for different kinds of elements with the same style
+*/
 const OptionContainerStyles = css`
   padding: 10px 15px;
   cursor: pointer;
@@ -34,6 +37,6 @@ export const OptionLink = styled(Link)`
   ${OptionContainerStyles}
 `;
 
-export const OptionDiv = styled.div`
-  ${OptionContainerStyles}
-`;
+// export const OptionDiv = styled.div`
+//   ${OptionContainerStyles}
+// `;
