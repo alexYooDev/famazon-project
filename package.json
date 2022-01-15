@@ -24,7 +24,6 @@
     "reselect": "^4.1.5",
     "styled-components": "^5.3.3",
     "web-vitals": "^0.2.4",
-    "webpack": "4.36",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
     "workbox-cacheable-response": "^5.1.4",
@@ -61,5 +60,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack": "^5.66.0"
   }
 }
