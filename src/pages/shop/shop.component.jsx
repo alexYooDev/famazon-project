@@ -12,9 +12,12 @@ import { updateCollections } from '../../redux/shop/shop.actions';
 
 import WithSpinner from '../../components/with-spinner/with-spinner.component';
 
+const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
+const CollectionPageWithSpinner = WithSpinner(CollectionPage);
+
 class ShopPage extends React.Component {
   state = {
-    isLoading: true,
+    loading: true,
   };
 
   unsubscribeFromSnapshot = null;
@@ -27,15 +30,22 @@ class ShopPage extends React.Component {
     collectionRef.onSnapshot(async (snapShot) => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapShot);
       updateCollections(collectionsMap);
-      this.setState({ isLoading: false });
+      this.setState({ loading: false });
     });
   }
   render() {
+    const { loading } = this.state;
     return (
       <div className='shop-page'>
         <Routes>
-          <Route path='/' element={<CollectionsOverview />} />
-          <Route path=':collectionId' element={<CollectionPage />} />
+          <Route
+            path='/'
+            element={<CollectionsOverviewWithSpinner isLoading={loading} />}
+          />
+          <Route
+            path=':collectionId'
+            element={<CollectionPageWithSpinner isLoading={loading} />}
+          />
         </Routes>
       </div>
     );
