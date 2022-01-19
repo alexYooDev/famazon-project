@@ -23,11 +23,4 @@ const CollectionPage = () => {
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    collection: selectCollection(state.shop.params)(state),
-  };
-};
-
-export default connect(mapStateToProps)(CollectionPage);
+export default CollectionPage;
