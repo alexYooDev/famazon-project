@@ -10,7 +10,6 @@ import {
   convertCollectionsSnapshotToMap,
 } from '../../firebase/firebase.utils';
 import { updateCollections } from '../../redux/shop/shop.actions';
-import { createStructuredSelector } from 'reselect';
 
 import WithSpinner from '../../components/with-spinner/with-spinner.component';
 
