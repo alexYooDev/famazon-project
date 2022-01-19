@@ -7,9 +7,8 @@ import { useParams } from 'react-router-dom';
 import { changeShopParams } from '../../redux/shop/shop.actions';
 import { useEffect } from 'react';
 
-const CollectionPage = ({ collection, changeParams }) => {
+const CollectionPage = ({ changeParams, collection }) => {
   let params = useParams();
-
   const { title, items } = collection;
 
   useEffect(() => {
